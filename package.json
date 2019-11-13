@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "babel index.js -d dist && node dist",
+    "start": "babel src --out-dir dist && node dist",
     "dev": "babel index.js -o res.js && node res.js",
     "mug": "babel index.js --out-dir lib",
     "last": "babel src --out-dir dist"
