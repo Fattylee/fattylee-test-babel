@@ -7,15 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest",
-    "start": "babel index.js -d dist && node dist",
-    "dev": "concurrently \"npm run trans\" \"npm run trans:node\" \"npm run start\" ",
-    "trans": "nodemon -w private/index.js --exec babel private/index.js --out-file=private/bundle.js",
-    "trans:node": "nodemon private/bundle",
-    "bab:start": "nodemon --exec babel-node api.test.js"
+    "start": "babel index.js -d dist && node dist" 
   },
   "dependencies": {
-    
     "@babel/cli": "7.4.4",
     "@babel/core": "7.4.4",
     "@babel/preset-env": "7.4.4"
