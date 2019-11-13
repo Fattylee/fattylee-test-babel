@@ -6,10 +6,12 @@
   "directories": {
     "test": "tests"
   },
-   "scripts": {
-    "test": "jest --watchAll --verbose",
-    "start": "nodemon -w ./public --exec babel-node public --presets=@babel/env",
-    "bab": "babel ./api.test.js --out-file=./api.res.js --presets=@babel/env",
+  "scripts": {
+    "test": "jest",
+    "start": "babel index.js -d dist && node dist",
+    "dev": "concurrently \"npm run trans\" \"npm run trans:node\" \"npm run start\" ",
+    "trans": "nodemon -w private/index.js --exec babel private/index.js --out-file=private/bundle.js",
+    "trans:node": "nodemon private/bundle",
     "bab:start": "nodemon --exec babel-node api.test.js"
   },
   "dependencies": {
@@ -29,16 +31,26 @@
     "faker": "4.1.0",
     "express-fileupload": "1.1.5",
     "uuid": "3.3.1",
-    "fs-extra": "7.0.1"
+    "fs-extra": "7.0.1",
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.4",
+    "@babel/preset-env": "7.4.4"
   },
   "devDependencies": {
     "jest": "24.1.0",
     "nodemon": "1.19.0"
+   
   },
   "engines": {
     "node": "12.1.0"
   },
-  "keywords": ["express", "nodejs", "passportjs", "express-handlebars", "stories"],
+  "keywords": [
+    "express",
+    "nodejs",
+    "passportjs",
+    "express-handlebars",
+    "stories"
+  ],
   "author": "fatai balogun",
   "license": "ISC"
 }
