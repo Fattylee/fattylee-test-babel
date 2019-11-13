@@ -1,3 +1,5 @@
-export const sum = (a, b) => a + b;
+const sum = (a, b) => console.log('sum is ', a + b);
 
-module.exports = { sum };
+
+
+export default sum;

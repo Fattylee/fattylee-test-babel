@@ -7,16 +7,17 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "babel index.js -d dist && node dist" 
+    "start": "babel index.js -d dist && node dist",
+    "dev": "babel index.js -o res.js && node res.js",
+    "mug": "babel index.js --out-dir lib",
+    "last": "babel src --out-dir dist"
   },
   "dependencies": {
-    "@babel/cli": "7.4.4",
-    "@babel/core": "7.4.4",
-    "@babel/preset-env": "7.4.4"
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.2",
+    "@babel/preset-env": "7.7.1"
   },
   "devDependencies": {
-    "jest": "24.1.0",
-    "nodemon": "1.19.0"
    
   },
   "engines": {
